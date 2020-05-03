@@ -1,23 +1,45 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import videojs from 'video.js';
+import 'video.js/dist/video-js.css';
+import awsvideoconfig from './aws-video-exports';
+
+class VideoPlayer extends React.Component {
+  componentDidMount() {
+    this.player = videojs(this.videoNode, this.props);
+  }
+
+  componentWillUnmount() {
+    if (this.player) {
+      this.player.dispose();
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div data-vjs-player>
+          <video ref={(node) => { this.videoNode = node; }} className="video-js" />
+        </div>
+      </div>
+    );
+  }
+}
+
+const videoJsOptions = {
+  autoplay: true,
+  controls: true,
+  sources: [{
+    src: awsvideoconfig.awsOutputLiveLL,
+  }]
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <VideoPlayer { ...videoJsOptions } />
       </header>
     </div>
   );
