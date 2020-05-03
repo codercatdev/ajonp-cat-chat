@@ -10,6 +10,13 @@
             "StackName": "amplify-ajonp-cat-chat-dev-122249",
             "StackId": "arn:aws:cloudformation:us-east-1:971315828335:stack/amplify-ajonp-cat-chat-dev-122249/577219d0-8d5a-11ea-b45d-0edf444c3fff",
             "AmplifyAppId": "d1eq9mb0ae2u24"
+        },
+        "categories": {
+            "auth": {
+                "ajonpcatchat2acaeaf7": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"432122349525-2ec48o91vm7ve9ngvvf7dis0oe37v2fn.apps.googleusercontent.com\",\"client_secret\":\"dklubv6YA5rbjbWy1zeNpas1\"},{\"ProviderName\":\"LoginWithAmazon\",\"client_id\":\"amzn1.application-oa2-client.e4843dcb4e614c7295aba680ca2cae36\",\"client_secret\":\"51209de828a47975facc2964f144f9672257b09084f0af1dd39de4b9911346a0\"}]"
+                }
+            }
         }
     }
 }

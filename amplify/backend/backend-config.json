@@ -5,6 +5,52 @@
 			"serviceType": "livestream",
 			"providerPlugin": "awscloudformation",
 			"sha": "31f6bcea580bb8f69aa607c77b036032e05cdb3f"
+		},
+		"ajonpcatchatvod": {
+			"service": "video",
+			"serviceType": "video-on-demand",
+			"providerPlugin": "awscloudformation",
+			"sha": "2b3f2afca8330775814a5bebfdbea6b2d3e422ca"
+		}
+	},
+	"auth": {
+		"ajonpcatchat2acaeaf7": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		},
+		"userPoolGroups": {
+			"service": "Cognito-UserPool-Groups",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "ajonpcatchat2acaeaf7",
+					"attributes": [
+						"UserPoolId",
+						"AppClientIDWeb",
+						"AppClientID",
+						"IdentityPoolId"
+					]
+				}
+			]
+		}
+	},
+	"api": {
+		"ajonpcatchatapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authajonpcatchat2acaeaf7"
+						}
+					}
+				}
+			}
 		}
 	}
 }

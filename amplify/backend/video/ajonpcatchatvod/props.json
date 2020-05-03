@@ -1,0 +1,23 @@
+{
+    "shared": {
+        "resourceName": "ajonpcatchatvod",
+        "bucketInput": "ajonpcatchatvod-dev-input-x0wh29iv",
+        "bucketOutput": "ajonpcatchatvod-dev-output-x0wh29iv",
+        "bucket": "amplify-ajonp-cat-chat-dev-122249-deployment"
+    },
+    "template": {
+        "name": "Amplify_Video_Accelerated_Ott_Hls_Ts_Avc_Aac.json"
+    },
+    "contentDeliveryNetwork": {
+        "enableDistribution": false
+    },
+    "cms": {
+        "overrideSchema": false,
+        "editAPI": false
+    },
+    "parameters": {
+        "authRoleName": {
+            "Ref": "AuthRoleName"
+        }
+    }
+}
