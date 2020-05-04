@@ -1,11 +1,5 @@
 {
 	"video": {
-		"ajonpcatchatlivestream": {
-			"service": "video",
-			"serviceType": "livestream",
-			"providerPlugin": "awscloudformation",
-			"sha": "31f6bcea580bb8f69aa607c77b036032e05cdb3f"
-		},
 		"ajonpcatchatvod": {
 			"service": "video",
 			"serviceType": "video-on-demand",
